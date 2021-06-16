@@ -82,10 +82,10 @@ const ContactForm = ({ getData }) => {
       <label className={css.label} >
         Name:
         <input
-            id={this.nameInputId}
+            id="outlined-basic"
             type="text"
             name="name"
-            value={this.state.name}
+            value={name}
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
             required
@@ -97,10 +97,10 @@ const ContactForm = ({ getData }) => {
       <label label className={css.label} >
         Phone number:
            <input
-          id={this.numberInputId}
+         id="outlined-basic"
           type="number"
           name="number"
-          value={this.state.number}
+          value={number}
           pattern="(\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})"
           title="Номер телефона должен состоять из 11-12 цифр и может содержать цифры, пробелы, тире, пузатые скобки и может начинаться с +"
           required
@@ -118,5 +118,5 @@ const ContactForm = ({ getData }) => {
   }
 
 
-const mapDispatchToProps = dispatch => ({onAdd: value => dispatch(operations.addContact(value))})
+const mapDispatchToProps = dispatch => ({getData: value => dispatch(operations.addContact(value))})
 export default connect(null, mapDispatchToProps)(ContactForm);
